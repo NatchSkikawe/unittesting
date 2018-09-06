@@ -16,3 +16,4 @@ def count_unique(list):
     """
     a = set(list)
     return len(a)
+
