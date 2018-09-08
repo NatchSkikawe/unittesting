@@ -17,3 +17,42 @@ def count_unique(list):
     a = set(list)
     return len(a)
 
+def binary_search(list, element):
+    """Search the binary in the list.
+       :param list: list of elements to find distinct elements of
+              element: elements in the list that want to find
+       :return: Return index of the matching element or "None" if the search element is not in the list
+       Examples:
+       >>> binary_search([1, 2, 3, 4], 1)
+       0
+       >>> binary_search([1, 2, 4, 5], 5)
+       3
+       >>> binary_search([1, 2, 4, 6], 0)
+       'None'
+       >>> binary_search([6, 2, 4, 1], 0)
+       'None'
+       >>> binary_search([], 5)
+       'The list is empty'
+       """
+    list.sort()
+    if element == None:
+        raise TypeError("Search element must not be none")
+    if len(list) == 0:
+        return "The list is empty"
+
+
+    lower = 0
+    upper= len(list)
+    while lower < upper:
+        x = lower + (upper - lower) // 2
+        if list[x] == element:
+            return x
+        elif element > list[x]:
+            if lower == x:
+              break
+            lower = x
+        elif element < list[x]:
+            upper = x
+
+    return "None"
+

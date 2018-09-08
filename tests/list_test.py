@@ -1,5 +1,5 @@
 import unittest
-from list import count_unique
+from list import count_unique, binary_search
 
 
 class TestList(unittest.TestCase):
@@ -18,5 +18,27 @@ class TestList(unittest.TestCase):
     def extreme_cases(self):
         l = ["a","a","a","a","a","a","a","a","a","a","a","a"]
         self.assertEquals(count_unique(list), 12 )
-if __name__ == '__main__':
+
+class TestBinarySearch(unittest.TestCase):
+
+    def empty_case(self):
+         list = []
+         self.assertEqual("The list is empty", binary_search(list, 5))
+
+    def target_is_none(self):
+        list = [1, 2, 3, 4]
+        self.assertEqual("None", binary_search(list, 5))
+
+    def element_is_none(self):
+        list = [1, 2, 3, 4, 5, 6, 7]
+        binary_search(list, None)
+        self.assertRaises(TypeError)
+
+    def extreme_cases(self):
+        list = []
+        for i in range(1, 55555):
+         list.append(i)
+        self.assertEqual(55555, binary_search(list, 666666))
+
+if __name__ == "__main__":
     unittest.main()
