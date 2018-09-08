@@ -1,7 +1,7 @@
 def count_unique(list):
     """Count the number of distinct elements in a list.
-    The list can contain any kind of elements, including duplicates and nulls in any order.
-    (In PyDoc there are different formats for parameters and returns. Use what you prefer.)
+    The list can contain any kind of elements, including duplicates and nulls in any order,
+    (In PyDoc there are different formats for parameters and returns, Use what you prefer)
     :param list:  list of elements to find distinct elements of
     :return: the number of distinct elements in list
     Examples:
@@ -18,7 +18,7 @@ def count_unique(list):
     return len(a)
 
 def binary_search(list, element):
-    """Search the binary in the list.
+    """Searching the binary in the list.
        :param list: list of elements to find distinct elements of
               element: elements in the list that want to find
        :return: Return index of the matching element or "None" if the search element is not in the list
